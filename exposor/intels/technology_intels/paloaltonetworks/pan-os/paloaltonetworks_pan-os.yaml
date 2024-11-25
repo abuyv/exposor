@@ -6,6 +6,7 @@ info:
 queries:
   censys:
   - services.http.response.favicons.shodan_hash:"-631559155"
+  - "services.software.uniform_resource_identifier: `cpe:2.3:o:paloaltonetworks:pan\-os:*:*:*:*:*:*:*:*`"
   fofa:
   - icon_hash="-631559155"
   shodan:
