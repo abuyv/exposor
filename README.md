@@ -40,7 +40,7 @@ Exposor is a contactless reconnaissance tool focused on technology detection acr
 
 ### Key Features
  - Easily configure API credentials and keep the intelligence files updated.
- - Perform targeted searches by netblock or ISO-3166 country codes.
+ - Perform targeted searches by netblock, country code, or hostname.
  - Execute queries across multiple feeds with a unified syntax.
  - Extend intel capabilities by contributing new YAML files. 
  - Identify exposed systems and potential vulnerabilities using CPEs or CVEs.

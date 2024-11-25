@@ -56,10 +56,11 @@ class Shodan:
                     #print(matches_to_add)
                     for banner in matches_to_add:
                         domains = banner.get('domains', [])
-                        for domain in domains:
-                            counter+=1
+                        counter+=1
+                        for domain in domains:                            
                             if counter>int(limit_result):
                                 break
+                            counter+=1
                             banner_dic = {
                                 'ip':banner.get('ip_str', None),
                                 'domain': domain,
