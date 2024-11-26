@@ -56,7 +56,8 @@ class Shodan:
                     #print(matches_to_add)
                     for banner in matches_to_add:
                         domains = banner.get('domains', [])
-                        counter+=1
+                        if not domains:
+                            counter+=1
                         for domain in domains:                            
                             if counter>int(limit_result):
                                 break

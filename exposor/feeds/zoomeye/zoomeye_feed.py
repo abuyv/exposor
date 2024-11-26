@@ -86,7 +86,8 @@ class Zoomeye:
                     matches_to_add = matches[:remaining]
                     for banner in matches_to_add:
                         ip_addresses = banner.get('ip', [])
-                        counter+=1
+                        if not ip_addresses:
+                            counter+=1
                         for ip in ip_addresses:                            
                             if counter > int(limit_result):
                                 break
