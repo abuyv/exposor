@@ -83,7 +83,7 @@ You can add your API keys in two ways:
 Run `exposor --init` option to create a configuration file:
 
 ```bash
-export --init shodan:api_key zoomeye:api_key censys:api_id:api_secret fofa:email:api_key
+exposor --init shodan:api_key zoomeye:api_key censys:api_id:api_secret fofa:email:api_key
 ```
 
 
