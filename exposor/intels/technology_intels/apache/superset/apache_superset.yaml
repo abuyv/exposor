@@ -9,6 +9,7 @@ queries:
   - services.http.response.body:"apache superset"
   - services.http.response.favicons.shodan_hash:1582430156
   fofa:
+  - app="APACHE-Superset"
   - icon_hash=1582430156
   - banner="apache superset"
   - body="apache superset"
