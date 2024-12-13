@@ -12,3 +12,4 @@ queries:
   - title:"Struts2 Showcase"
   zoomeye:
   - title:"Struts2 Showcase"
+  - app="Apache Struts2"
