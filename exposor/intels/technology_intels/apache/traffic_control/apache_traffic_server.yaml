@@ -1,0 +1,16 @@
+info:
+  author: exposor
+  cpe: cpe:2.3:a:apache:traffic_server:*:*:*:*:*:*:*:*
+  description: Detection of apache traffic server (proxy server)
+  version: '1.0'
+queries:
+  censys:
+  - "services.banner:\"Server: ATS\""
+  fofa:
+  - "header=\"Server: ATS\""
+  - product="APACHE-Traffic-Server"
+  shodan:
+  - "Server: ATS"
+  zoomeye:
+  - "banner:\"Server: ATS\""
+  
