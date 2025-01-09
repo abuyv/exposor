@@ -5,14 +5,18 @@ info:
   version: '1.0'
 queries:
   censys:
+  - services.http.response.html_title:"Aviatrix Controller"
   - services.http.response.html_title:"aviatrix cloud controller"
   - services.http.response.html_title:"Aviatrix Cloud Controller"
   fofa:
+  - - http.title="Aviatrix Controller"
   - http.title="aviatrix cloud controller"
   - http.title="Aviatrix Cloud Controller"
   shodan:
+  - http.title:"Aviatrix Controller"
   - http.title:"Aviatrix Cloud Controller"
   - http.title:"aviatrix cloud controller"
   zoomeye:
+  - title:"Aviatrix Controller"
   - title:"Aviatrix Cloud Controller"
   - title:"aviatrix cloud controller"
