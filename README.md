@@ -3,7 +3,7 @@
   <br>
 <strong>Exposor - A Contactless Reconnaissance Tool with unified syntax</strong>
   <p align="center">
-  &nbsp;<a href="https://blackhatmea.com/agenda-2024?combine=exposor&field_swapcard_sessions_day_target_id=All"><img alt="Static Badge" src="https://img.shields.io/badge/BlackHat_MEA_2024-Arsenal-red.svg"></a>
+  &nbsp;<a href="https://web.archive.org/web/20250403064040/https://blackhatmea.com/agenda-2024?combine=exposor&field_swapcard_sessions_day_target_id=All"><img alt="Static Badge" src="https://img.shields.io/badge/BlackHat_MEA_2024-Arsenal-red.svg"></a>
   &nbsp;<a href="https://blackhat.com"><img alt="Static Badge" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
   </p>
 </p>
