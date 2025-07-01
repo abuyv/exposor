@@ -81,19 +81,32 @@ def parse_args():
         description = (
             "Explore multiple feeds for a given CPE or CVE. Supported feeds "
             "include Censys, Fofa, Shodan, and Zoomeye"),
-        formatter_class = CustomHelpFormatter
+        formatter_class = CustomHelpFormatter,
+        add_help=False
     )
-    parser.add_argument(
+    
+    # General Options 
+    general_group = parser.add_argument_group("General Options")
+    
+    general_group.add_argument(
+        "-h", "--help",
+        action="help",
+        help="Show this help message and exit"
+    )
+    general_group.add_argument(
         "--init",
         nargs = "+",
         help = "Initialize API keys for the feeds in the format `feed:credentials`"
     )
-    parser.add_argument(
+    general_group.add_argument(
         "--update",
         action = "store_true",
         help = "Update the intelligence files (intels folder) to include the latest queries"
     )
-    parser.add_argument(
+    
+    # Query Options
+    query_group = parser.add_argument_group("Query Options")
+    query_group.add_argument(
         "-q", "--query",
         help = (
              "Specify the search query. "
@@ -101,7 +114,7 @@ def parse_args():
         ),
         action = RegexValidator
     )
-    parser.add_argument(
+    query_group.add_argument(
         "-qL", "--query-limit",
         choices = ["yes", "no"],
         default = "yes",
@@ -111,31 +124,31 @@ def parse_args():
             "want to send all possible queries in each feed, disable this option by using `-qL no`"
         )
     )
-    parser.add_argument(
+    query_group.add_argument(
         "-f", "--feed",
         nargs = '+',
         choices = ["all", "censys", "fofa", "shodan", "zoomeye"],
         help = "Chooese one or more data feeds to query from. Use `all` to query all supported feeds"
     )
-    parser.add_argument(
+    query_group.add_argument(
         "-c", "--country",
          help = "Search technologies by specific country using country codes (e.g. `US` for the USA)"
     )
-    parser.add_argument(
+    query_group.add_argument(
         "-n", "--netblock",
          help = (
              "Provde a netblock or a specific IP address to search"
              " (e.g. `192.168.0.1/24` or `192.168.0.1`)"
              )
     )
-    parser.add_argument(
+    query_group.add_argument(
         "-d", "--domain-name",
          help = (
              "Specify the target domain to search"
              " (e.g. `example.com`)"
              )
     )
-    parser.add_argument(
+    query_group.add_argument(
         "--limit",
         type = int,
         default = 50,
@@ -146,13 +159,16 @@ def parse_args():
             " (default value is `50`)"
         )
     )
-    parser.add_argument(
+    
+    # Result Options
+    result_group = parser.add_argument_group("Result Options")
+    result_group.add_argument(
         "-v", "--verbose",
         action = "count",
         default = 0,
         help = "Enable verbose output to get detailed logs, increase output verbosity (`-v`, `-vv`)"
     )
-    parser.add_argument(
+    result_group.add_argument(
         "-o",
         "--output",
         required = False,

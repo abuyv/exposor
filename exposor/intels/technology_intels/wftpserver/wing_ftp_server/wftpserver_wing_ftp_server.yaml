@@ -3,4 +3,12 @@ info:
   cpe: cpe:2.3:a:wftpserver:wing_ftp_server:*:*:*:*:*:*:*:*
   description: Detection of wftpserver wing_ftp_server
   version: '1.0'
-queries: {}
+queries:
+  censys:
+  - services.software.product:"Wing FTP Server "
+  fofa:
+  - app="Wing FTP Server"
+  shodan:
+  - product:"Wing FTP Server"
+  zoomeye:
+  - app="Wing FTP Server"
