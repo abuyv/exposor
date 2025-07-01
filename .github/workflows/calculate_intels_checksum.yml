@@ -2,25 +2,46 @@ name: Calculate Folder Checksum
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - 'exposor/intels/**'  # Trigger only when changes occur in the intels folder
+      - 'exposor/intels/**'
 
 jobs:
   calculate-checksum:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Calculate Checksum of intels Folder
+      - name: Calculate folder checksum and update checksum.json
         run: |
-          # Ensure the intels directory exists
-          if [ -d "exposor/intels" ]; then
-            # Find all files in the intels folder, sort them, and compute a checksum
-            CHECKSUM=$(find exposor/intels -type f -exec sha256sum {} + | sort | sha256sum | awk '{print $1}')
-            echo "Checksum of intels folder: $CHECKSUM"
-          else
-            echo "intels folder does not exist."
+          INTELS_DIR="exposor/intels"
+          CHECKSUM_FILE="$INTELS_DIR/checksum.json"
+
+          if [ ! -d "$INTELS_DIR" ]; then
+            echo "$INTELS_DIR does not exist"
             exit 1
+          fi
+
+          # Calculate folder hash (excluding checksum.json)
+          HASH=$(find "$INTELS_DIR" -type f ! -name 'checksum.json' -exec sha256sum {} + | sort | sha256sum | awk '{print $1}')
+
+          # Write to checksum.json
+          echo "{ \"intels_hash\": \"$HASH\" }" > "$CHECKSUM_FILE"
+
+      - name: Commit and push if checksum changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add exposor/intels/checksum.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update intels checksum.json"
+            git push
           fi
