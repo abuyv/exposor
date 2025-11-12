@@ -3,6 +3,8 @@
   <br>
 <strong>Exposor - A Contactless Reconnaissance Tool with unified syntax</strong>
   <p align="center">
+    &nbsp;<a href="https://web.archive.org/web/20250827133954/https://blackhat.com/us-25/arsenal/schedule/index.html#exposor---a-contactless-reconnaissance-tool-using-internet-search-engines-with-a-unified-syntax-44637"><img alt="Static Badge" src="https://img.shields.io/badge/BlackHat_USA_2025-Arsenal-blue.svg"></a>
+    &nbsp;<a href="https://web.archive.org/web/20251112050509/https://www.appsecvillage.com/events/dc-2025/exposor-a-contactless-reconnaissance-tool-using-internet-search-engines-with-a-unified-syntax-929434"><img alt="Static Badge" src="https://img.shields.io/badge/DEFCON_USA_2025-AppSec_Village-orange.svg"></a>
   &nbsp;<a href="https://web.archive.org/web/20250403064040/https://blackhatmea.com/agenda-2024?combine=exposor&field_swapcard_sessions_day_target_id=All"><img alt="Static Badge" src="https://img.shields.io/badge/BlackHat_MEA_2024-Arsenal-red.svg"></a>
   &nbsp;<a href="https://blackhat.com"><img alt="Static Badge" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
   </p>
@@ -220,3 +222,4 @@ Use `Exposor` responsibly and follow all regulations. You are fully responsible 
 <img src="https://raw.githubusercontent.com/abuyv/exposor/main/docs/media/exposor-star-repo.gif" alt="Starred" width="300"/>
 
 If you are here and found it useful, consider giving the repository a ⭐ to show your support. 
+
